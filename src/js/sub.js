@@ -1,117 +1,84 @@
 export function toggle() {
   'use strict';
 
-  setToggle('.toggle__hook');
+  const FOCUSABLE = 'a, area, input, button, select, option, textarea, output, summary, video, audio, object, embed, iframe';
 
-  function setToggle(root) {
-    const FOCUSABLE = 'a, area, input, button, select, option, textarea, output, summary, video, audio, object, embed, iframe';
-    const trigger = document.querySelectorAll(root);
-    let toggleContent = trigger.nextElementSibling;
-    let height = 0;
-    let isSliding = false;
-    const openTxt = 'トグルを開く';
-    const closeTxt = 'トグルを閉じる';
-  
-    function init () {
-      trigger.forEach(function (i) {
-        appendToggleIcon(i);
-        setWaiAria(i);
-        i.addEventListener('click', clickHandler);
-        i.nextElementSibling.addEventListener('transitionend', transitionHandler);
-      });
-    }
-  
-    function appendToggleIcon(target) {
-      let triggerIcon = document.createElement('span');
-      let triggerInitTxt = document.createTextNode(openTxt);
-      triggerIcon.appendChild(triggerInitTxt);
-      target.appendChild(triggerIcon);
-    }
-  
-    function setWaiAria(target) {
-      target.setAttribute('aria-expanded', false);
-      target.nextElementSibling.setAttribute('aria-hidden', true);
-    }
-  
-    function clickHandler(e) {
-      let hook = e.target;
-      let content = hook.nextElementSibling;
-      let hookState = hook.getAttribute('aria-expanded');
-  
-      e.preventDefault();
-  
-      if (isSliding) {
-        return;
-      }
-  
-      isSliding = true;
-  
-      if (hookState === 'false') {
-        openToggle(hook, content);
-      } else {
-        closeToggle(hook, content);
+  setToggle('.toggle');
+
+  function setToggle (rootEl, options) {
+    const rootElement = document.querySelectorAll(rootEl);
+    let o = {
+      hook: '.toggle__hook',
+      content: '.toggle__content',
+      openTxt: 'トグルを開く',
+      closeTxt: 'トグルを閉じる'
+    };
+
+    if (options) {
+      for (let key in options) {
+        o[key] = options[key];
       }
     }
-  
-    function transitionHandler(e) {
-      let target = e.target;
-  
-      if (target.offsetHeight === 0) {
-        target.setAttribute('aria-hidden', true);
-      }
-  
-      target.style.height = '';
-      isSliding = false;
-    }
-  
-    function openToggle(target, targetNextEl) {
-      changeTabindex(targetNextEl);
-  
-      target.setAttribute('aria-expanded', true);
-      targetNextEl.setAttribute('aria-hidden', false);
-      height = targetNextEl.offsetHeight;
-      targetNextEl.style.height = '0';
-  
-      if (targetNextEl.offsetHeight !== 0) {
-        requestAnimationFrame(openToggle);
-        return;
-      }
-  
-      targetNextEl.style.height = height + 'px';
-    }
-  
-    function closeToggle(target, targetNextEl) {
-      changeTabindex(targetNextEl);
-  
-      target.setAttribute('aria-expanded', false);
-      height = targetNextEl.offsetHeight;
-      targetNextEl.style.height = height + 'px';
-  
-      if (targetNextEl.offsetHeight !== height) {
-        return;
-      }
-  
-      targetNextEl.style.height = 0;
-    }
-    
-    function changeTabindex(target) {
-      let targetState = target.getAttribute('aria-hidden');
-      let focusEl = target.querySelectorAll(FOCUSABLE);
-  
-      if (!focusEl.length) {
-        return;
-      }
-  
-      focusEl.forEach(function (i) {
-        if (targetState === 'true') {
-          i.setAttribute('tabindex', 0);
-        } else {
-          i.setAttribute('tabindex', -1);
+
+    return rootElement.forEach(function (i) {
+      const root = i;
+      const hook = o.hook;
+      const content = o.content;
+      const Toggle = function () {
+        this.root = root;
+        this.hook = root.querySelector(hook);
+        this.content = root.querySelector(content);
+        this.focusEl = root.querySelectorAll(FOCUSABLE);
+        this.openTxt = o.openTxt;
+        this.closeTxt = o.closeTxt;
+        this.isSliding = false;
+      };
+
+      Toggle.prototype = {
+        init: function () {
+          this.setAccessibility();
+          this.clickHandler();
+        },
+
+        clickHandler: function () {
+          let self = this;
+
+          this.hook.addEventListener('click', function (e) {
+            let hookState = e.target.getAttribute('aria-expanded');
+
+            if (this.isSliding) {
+              return;
+            }
+
+            self.isSliding = true;
+
+            if (hookState === 'false') {
+              self.openToggle();
+            } else {
+              self.clolseToggle();
+            }
+          });
+        },
+
+        openToggle: function () {
+        },
+
+        clolseToggle: function () {
+        },
+
+        setAccessibility: function () {
+          let triggerIcon = document.createElement('span');
+          let triggerInitTxt = document.createTextNode(this.openTxt);
+          triggerIcon.appendChild(triggerInitTxt);
+          this.hook.appendChild(triggerIcon);
+          this.hook.setAttribute('aria-expanded', false);
+          this.content.setAttribute('aria-hidden', true);
         }
-      });
-    }
-  
-    // Just Do It!!!!!!
-    init();
+      };
+
+      let toggle = new Toggle();
+      toggle.init();
+    });
   }
+
 }
