@@ -11653,6 +11653,7 @@ function toggle() {
         this.focusEl = this.content.querySelectorAll(FOCUSABLE);
         this.openTxt = o.openTxt;
         this.closeTxt = o.closeTxt;
+        this.button = null;
         this.duration = o.duration;
         this.easing = o.easing;
         this.isSliding = false;
@@ -11677,6 +11678,7 @@ function toggle() {
           this.content.style.transitionTimingFunction = this.easing;
           triggerIcon.appendChild(triggerInitTxt);
           this.hook.appendChild(triggerIcon);
+          this.button = this.hook.querySelector('span');
         },
 
         /**
@@ -11737,6 +11739,7 @@ function toggle() {
         openToggle: function openToggle() {
           this.hook.setAttribute('aria-expanded', true);
           this.content.setAttribute('aria-hidden', false);
+          this.button.textContent = this.closeTxt;
           this.height = this.content.offsetHeight;
           this.content.style.height = 0;
 
@@ -11756,6 +11759,7 @@ function toggle() {
           this.height = this.content.offsetHeight;
           this.content.style.height = this.height + 'px';
           this.hook.setAttribute('aria-expanded', false);
+          this.button.textContent = this.openTxt;
 
           if (this.content.offsetHeight !== this.height) {
             return;

@@ -37,6 +37,7 @@ export function toggle() {
         this.focusEl = this.content.querySelectorAll(FOCUSABLE);
         this.openTxt = o.openTxt;
         this.closeTxt = o.closeTxt;
+        this.button = null;
         this.duration = o.duration;
         this.easing = o.easing;
         this.isSliding = false;
@@ -58,10 +59,11 @@ export function toggle() {
           let triggerIcon = document.createElement('span');
           let triggerInitTxt = document.createTextNode(this.openTxt);
 
-          this.content.style.transitionDuration = this.duration / 1000 + 's'
+          this.content.style.transitionDuration = this.duration / 1000 + 's';
           this.content.style.transitionTimingFunction = this.easing;
           triggerIcon.appendChild(triggerInitTxt);
           this.hook.appendChild(triggerIcon);
+          this.button = this.hook.querySelector('span');
         },
 
         /**
@@ -123,6 +125,7 @@ export function toggle() {
         openToggle: function () {
           this.hook.setAttribute('aria-expanded', true);
           this.content.setAttribute('aria-hidden', false);
+          this.button.textContent = this.closeTxt;
           this.height = this.content.offsetHeight; 
           this.content.style.height = 0;
 
@@ -142,6 +145,7 @@ export function toggle() {
           this.height = this.content.offsetHeight;
           this.content.style.height = this.height + 'px';
           this.hook.setAttribute('aria-expanded', false);
+          this.button.textContent = this.openTxt;
 
           if (this.content.offsetHeight !== this.height) {
             return;
