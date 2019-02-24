@@ -25,8 +25,6 @@ export function toggle() {
 
     return rootElement.forEach(function (i) {
       const root = i;
-      const hook = o.hook;
-      const content = o.content;
 
       /**
        * トグル機能
@@ -34,8 +32,8 @@ export function toggle() {
        */
       const Toggle = function () {
         this.root = root;
-        this.hook = root.querySelector(hook);
-        this.content = root.querySelector(content);
+        this.hook = root.querySelector(o.hook);
+        this.content = root.querySelector(o.content);
         this.focusEl = this.content.querySelectorAll(FOCUSABLE);
         this.openTxt = o.openTxt;
         this.closeTxt = o.closeTxt;

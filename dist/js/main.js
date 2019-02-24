@@ -11641,8 +11641,6 @@ function toggle() {
 
     return rootElement.forEach(function (i) {
       var root = i;
-      var hook = o.hook;
-      var content = o.content;
       /**
        * トグル機能
        * @constructor
@@ -11650,8 +11648,8 @@ function toggle() {
 
       var Toggle = function Toggle() {
         this.root = root;
-        this.hook = root.querySelector(hook);
-        this.content = root.querySelector(content);
+        this.hook = root.querySelector(o.hook);
+        this.content = root.querySelector(o.content);
         this.focusEl = this.content.querySelectorAll(FOCUSABLE);
         this.openTxt = o.openTxt;
         this.closeTxt = o.closeTxt;
