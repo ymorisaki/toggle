@@ -10199,7 +10199,7 @@ module.exports = __webpack_require__(/*! ../modules/_core */ "./node_modules/cor
 
 exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(true);
 // Module
-exports.push([module.i, "body {\n  font-size: 16px;\n  font-family: Verdana; }\n\ntable {\n  width: 540px;\n  margin: 20px auto;\n  border-collapse: collapse; }\n  table th, table td {\n    width: 180px;\n    box-sizing: border-box;\n    border: 1px solid #555;\n    padding: 20px; }\n  table th {\n    cursor: pointer; }\n  table tbody tr:nth-child(odd) {\n    background: #f8f8f8; }\n\n.score {\n  text-align: right; }\n\nth:after {\n  content: '\\f0dc';\n  font-family: FontAwesome;\n  font-size: 12px;\n  color: #ccc;\n  float: right;\n  padding-top: 4px;\n  font-weight: nomal; }\n\nth.asc:after {\n  content: '\\f0de';\n  font-family: FontAwesome;\n  color: #000; }\n\nth.desc:after {\n  content: '\\f0dd';\n  font-family: FontAwesome;\n  color: #000; }\n", "",{"version":3,"sources":["/Users/yuji/Desktop/work/webpacktemp/src/scss/src/scss/_base.scss"],"names":[],"mappings":"AACA;EACI,eAAe;EACf,oBAAoB,EAAA;;AAGxB;EACI,YAAY;EACZ,iBAAiB;EACjB,yBAAyB,EAAA;EAH7B;IAMQ,YAAY;IACZ,sBAAsB;IACtB,sBAAsB;IACtB,aAAa,EAAA;EATrB;IAaQ,eAAe,EAAA;EAbvB;IAiBQ,mBAAmB,EAAA;;AAI3B;EACI,iBAAiB,EAAA;;AAGrB;EACI,gBAAgB;EAChB,wBAAwB;EACxB,eAAe;EACf,WAAW;EACX,YAAY;EACZ,gBAAgB;EAChB,kBAAkB,EAAA;;AAEtB;EACI,gBAAgB;EAChB,wBAAwB;EACxB,WAAW,EAAA;;AAEf;EACI,gBAAgB;EAChB,wBAAwB;EACxB,WAAW,EAAA","file":"main.scss","sourcesContent":["@charset \"UTF-8\";\nbody {\n    font-size: 16px;\n    font-family: Verdana;\n}\n\ntable {\n    width: 540px;\n    margin: 20px auto;\n    border-collapse: collapse;\n\n    th, td {\n        width: 180px;\n        box-sizing: border-box;\n        border: 1px solid #555;\n        padding: 20px;\n    }\n\n    th {\n        cursor: pointer;\n    }\n\n    tbody tr:nth-child(odd) {\n        background: #f8f8f8;\n    }\n}\n\n.score {\n    text-align: right;\n}\n\nth:after {\n    content: '\\f0dc';\n    font-family: FontAwesome;\n    font-size: 12px;\n    color: #ccc;\n    float: right;\n    padding-top: 4px;\n    font-weight: nomal;\n}\nth.asc:after {\n    content: '\\f0de';\n    font-family: FontAwesome;\n    color: #000;\n}\nth.desc:after {\n    content: '\\f0dd';\n    font-family: FontAwesome;\n    color: #000;\n}\n"],"sourceRoot":""}]);
+exports.push([module.i, "@charset \"UTF-8\";\n/*!\n * ress.css • v1.2.2\n * MIT License\n * github.com/filipelinhares/ress\n */\nhtml {\n  box-sizing: border-box;\n  overflow-y: scroll;\n  /* All browsers without overlaying scrollbars */\n  -webkit-text-size-adjust: 100%;\n  /* iOS 8+ */ }\n\n*,\n::before,\n::after {\n  background-repeat: no-repeat;\n  box-sizing: inherit; }\n\n::before,\n::after {\n  text-decoration: inherit;\n  vertical-align: inherit; }\n\n* {\n  padding: 0;\n  margin: 0; }\n\naudio:not([controls]) {\n  display: none;\n  height: 0; }\n\nhr {\n  overflow: visible; }\n\narticle,\naside,\ndetails,\nfigcaption,\nfigure,\nfooter,\nheader,\nmain,\nmenu,\nnav,\nsection,\nsummary {\n  display: block; }\n\nsummary {\n  display: list-item; }\n\nsmall {\n  font-size: 80%; }\n\n[hidden],\ntemplate {\n  display: none; }\n\nabbr[title] {\n  border-bottom: 1px dotted;\n  text-decoration: none; }\n\na {\n  background-color: transparent;\n  -webkit-text-decoration-skip: objects; }\n\na:active,\na:hover {\n  outline-width: 0; }\n\ncode,\nkbd,\npre,\nsamp {\n  font-family: monospace, monospace; }\n\nb,\nstrong {\n  font-weight: bolder; }\n\ndfn {\n  font-style: italic; }\n\nmark {\n  background-color: #ff0;\n  color: #000; }\n\nsub,\nsup {\n  font-size: 75%;\n  line-height: 0;\n  position: relative;\n  vertical-align: baseline; }\n\nsub {\n  bottom: -0.25em; }\n\nsup {\n  top: -0.5em; }\n\ninput {\n  border-radius: 0; }\n\nbutton,\n[type=\"button\"],\n[type=\"reset\"],\n[type=\"submit\"],\n[role=\"button\"] {\n  cursor: pointer; }\n\n[disabled] {\n  cursor: default; }\n\n[type=\"number\"] {\n  width: auto; }\n\n[type=\"search\"] {\n  -webkit-appearance: textfield; }\n\n[type=\"search\"]::-webkit-search-cancel-button,\n[type=\"search\"]::-webkit-search-decoration {\n  -webkit-appearance: none; }\n\ntextarea {\n  overflow: auto;\n  resize: vertical; }\n\nbutton,\ninput,\noptgroup,\nselect,\ntextarea {\n  font: inherit; }\n\noptgroup {\n  font-weight: bold; }\n\nbutton {\n  overflow: visible; }\n\nbutton::-moz-focus-inner,\n[type=\"button\"]::-moz-focus-inner,\n[type=\"reset\"]::-moz-focus-inner,\n[type=\"submit\"]::-moz-focus-inner {\n  border-style: 0;\n  padding: 0; }\n\nbutton:-moz-focusring,\n[type=\"button\"]::-moz-focus-inner,\n[type=\"reset\"]::-moz-focus-inner,\n[type=\"submit\"]::-moz-focus-inner {\n  outline: 1px dotted ButtonText; }\n\nbutton,\nhtml [type=\"button\"],\n[type=\"reset\"],\n[type=\"submit\"] {\n  -webkit-appearance: button; }\n\nbutton,\nselect {\n  text-transform: none; }\n\nbutton,\ninput,\nselect,\ntextarea {\n  background-color: transparent;\n  border-style: none;\n  color: inherit; }\n\nselect {\n  -moz-appearance: none;\n  -webkit-appearance: none; }\n\nselect::-ms-expand {\n  display: none; }\n\nselect::-ms-value {\n  color: currentColor; }\n\nlegend {\n  border: 0;\n  color: inherit;\n  display: table;\n  max-width: 100%;\n  white-space: normal; }\n\n::-webkit-file-upload-button {\n  -webkit-appearance: button;\n  font: inherit; }\n\n[type=\"search\"] {\n  -webkit-appearance: textfield;\n  outline-offset: -2px; }\n\nimg {\n  border-style: none; }\n\nprogress {\n  vertical-align: baseline; }\n\nsvg:not(:root) {\n  overflow: hidden; }\n\naudio,\ncanvas,\nprogress,\nvideo {\n  display: inline-block; }\n\n@media screen {\n  [hidden~=\"screen\"] {\n    display: inherit; }\n  [hidden~=\"screen\"]:not(:active):not(:focus):not(:target) {\n    position: absolute !important;\n    clip: rect(0 0 0 0) !important; } }\n\n[aria-busy=\"true\"] {\n  cursor: progress; }\n\n[aria-controls] {\n  cursor: pointer; }\n\n[aria-disabled] {\n  cursor: default; }\n\n::-moz-selection {\n  background-color: #b3d4fc;\n  color: #000;\n  text-shadow: none; }\n\n::selection {\n  background-color: #b3d4fc;\n  color: #000;\n  text-shadow: none; }\n\nbody {\n  font-size: 16px;\n  font-family: Verdana; }\n\ntable {\n  width: 540px;\n  margin: 20px auto;\n  border-collapse: collapse; }\n  table th, table td {\n    width: 180px;\n    box-sizing: border-box;\n    border: 1px solid #555;\n    padding: 20px; }\n  table th {\n    cursor: pointer; }\n  table tbody tr:nth-child(odd) {\n    background: #f8f8f8; }\n\n.score {\n  text-align: right; }\n\nth:after {\n  content: '\\f0dc';\n  font-family: FontAwesome;\n  font-size: 12px;\n  color: #ccc;\n  float: right;\n  padding-top: 4px;\n  font-weight: nomal; }\n\nth.asc:after {\n  content: '\\f0de';\n  font-family: FontAwesome;\n  color: #000; }\n\nth.desc:after {\n  content: '\\f0dd';\n  font-family: FontAwesome;\n  color: #000; }\n\n.toggle {\n  margin-bottom: 20px;\n  border: 1px solid #ddd; }\n  .toggle__hook {\n    display: block;\n    width: 100%;\n    padding: 10px;\n    border: none;\n    background: none;\n    cursor: pointer; }\n    .toggle__hook[aria-expanded] {\n      position: relative; }\n      .toggle__hook[aria-expanded]::before, .toggle__hook[aria-expanded]::after {\n        position: absolute;\n        top: 50%;\n        right: 15px;\n        width: 20px;\n        height: 2px;\n        content: '';\n        background: #090909;\n        transition: .3s;\n        transform-origin: center; }\n      .toggle__hook[aria-expanded] > span {\n        position: absolute;\n        top: -3000px;\n        left: -3000px; }\n    .toggle__hook[aria-expanded=\"false\"]::before {\n      transform: rotate(90deg); }\n    .toggle__hook[aria-expanded=\"true\"]::before {\n      transform: rotate(0deg); }\n  .toggle__content {\n    overflow: hidden; }\n  .toggle__content[aria-hidden=\"true\"] {\n    display: none; }\n  .toggle__content[aria-hidden=\"false\"] {\n    display: block; }\n  .toggle .content__inner {\n    padding: 10px; }\n", "",{"version":3,"sources":["/Users/yuji/Desktop/work/toggle/src/scss/main.scss","/Users/yuji/Desktop/work/toggle/src/scss/src/scss/core/_ress.scss","/Users/yuji/Desktop/work/toggle/src/scss/src/scss/core/_base.scss","/Users/yuji/Desktop/work/toggle/src/scss/src/scss/modules/_module.scss"],"names":[],"mappings":"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","file":"main.scss","sourcesContent":["@charset \"UTF-8\";\n/*!\n * ress.css • v1.2.2\n * MIT License\n * github.com/filipelinhares/ress\n */\nhtml {\n  box-sizing: border-box;\n  overflow-y: scroll;\n  /* All browsers without overlaying scrollbars */\n  -webkit-text-size-adjust: 100%;\n  /* iOS 8+ */ }\n\n*,\n::before,\n::after {\n  background-repeat: no-repeat;\n  box-sizing: inherit; }\n\n::before,\n::after {\n  text-decoration: inherit;\n  vertical-align: inherit; }\n\n* {\n  padding: 0;\n  margin: 0; }\n\naudio:not([controls]) {\n  display: none;\n  height: 0; }\n\nhr {\n  overflow: visible; }\n\narticle,\naside,\ndetails,\nfigcaption,\nfigure,\nfooter,\nheader,\nmain,\nmenu,\nnav,\nsection,\nsummary {\n  display: block; }\n\nsummary {\n  display: list-item; }\n\nsmall {\n  font-size: 80%; }\n\n[hidden],\ntemplate {\n  display: none; }\n\nabbr[title] {\n  border-bottom: 1px dotted;\n  text-decoration: none; }\n\na {\n  background-color: transparent;\n  -webkit-text-decoration-skip: objects; }\n\na:active,\na:hover {\n  outline-width: 0; }\n\ncode,\nkbd,\npre,\nsamp {\n  font-family: monospace, monospace; }\n\nb,\nstrong {\n  font-weight: bolder; }\n\ndfn {\n  font-style: italic; }\n\nmark {\n  background-color: #ff0;\n  color: #000; }\n\nsub,\nsup {\n  font-size: 75%;\n  line-height: 0;\n  position: relative;\n  vertical-align: baseline; }\n\nsub {\n  bottom: -0.25em; }\n\nsup {\n  top: -0.5em; }\n\ninput {\n  border-radius: 0; }\n\nbutton,\n[type=\"button\"],\n[type=\"reset\"],\n[type=\"submit\"],\n[role=\"button\"] {\n  cursor: pointer; }\n\n[disabled] {\n  cursor: default; }\n\n[type=\"number\"] {\n  width: auto; }\n\n[type=\"search\"] {\n  -webkit-appearance: textfield; }\n\n[type=\"search\"]::-webkit-search-cancel-button,\n[type=\"search\"]::-webkit-search-decoration {\n  -webkit-appearance: none; }\n\ntextarea {\n  overflow: auto;\n  resize: vertical; }\n\nbutton,\ninput,\noptgroup,\nselect,\ntextarea {\n  font: inherit; }\n\noptgroup {\n  font-weight: bold; }\n\nbutton {\n  overflow: visible; }\n\nbutton::-moz-focus-inner,\n[type=\"button\"]::-moz-focus-inner,\n[type=\"reset\"]::-moz-focus-inner,\n[type=\"submit\"]::-moz-focus-inner {\n  border-style: 0;\n  padding: 0; }\n\nbutton:-moz-focusring,\n[type=\"button\"]::-moz-focus-inner,\n[type=\"reset\"]::-moz-focus-inner,\n[type=\"submit\"]::-moz-focus-inner {\n  outline: 1px dotted ButtonText; }\n\nbutton,\nhtml [type=\"button\"],\n[type=\"reset\"],\n[type=\"submit\"] {\n  -webkit-appearance: button; }\n\nbutton,\nselect {\n  text-transform: none; }\n\nbutton,\ninput,\nselect,\ntextarea {\n  background-color: transparent;\n  border-style: none;\n  color: inherit; }\n\nselect {\n  -moz-appearance: none;\n  -webkit-appearance: none; }\n\nselect::-ms-expand {\n  display: none; }\n\nselect::-ms-value {\n  color: currentColor; }\n\nlegend {\n  border: 0;\n  color: inherit;\n  display: table;\n  max-width: 100%;\n  white-space: normal; }\n\n::-webkit-file-upload-button {\n  -webkit-appearance: button;\n  font: inherit; }\n\n[type=\"search\"] {\n  -webkit-appearance: textfield;\n  outline-offset: -2px; }\n\nimg {\n  border-style: none; }\n\nprogress {\n  vertical-align: baseline; }\n\nsvg:not(:root) {\n  overflow: hidden; }\n\naudio,\ncanvas,\nprogress,\nvideo {\n  display: inline-block; }\n\n@media screen {\n  [hidden~=\"screen\"] {\n    display: inherit; }\n  [hidden~=\"screen\"]:not(:active):not(:focus):not(:target) {\n    position: absolute !important;\n    clip: rect(0 0 0 0) !important; } }\n\n[aria-busy=\"true\"] {\n  cursor: progress; }\n\n[aria-controls] {\n  cursor: pointer; }\n\n[aria-disabled] {\n  cursor: default; }\n\n::-moz-selection {\n  background-color: #b3d4fc;\n  color: #000;\n  text-shadow: none; }\n\n::selection {\n  background-color: #b3d4fc;\n  color: #000;\n  text-shadow: none; }\n\nbody {\n  font-size: 16px;\n  font-family: Verdana; }\n\ntable {\n  width: 540px;\n  margin: 20px auto;\n  border-collapse: collapse; }\n  table th, table td {\n    width: 180px;\n    box-sizing: border-box;\n    border: 1px solid #555;\n    padding: 20px; }\n  table th {\n    cursor: pointer; }\n  table tbody tr:nth-child(odd) {\n    background: #f8f8f8; }\n\n.score {\n  text-align: right; }\n\nth:after {\n  content: '\\f0dc';\n  font-family: FontAwesome;\n  font-size: 12px;\n  color: #ccc;\n  float: right;\n  padding-top: 4px;\n  font-weight: nomal; }\n\nth.asc:after {\n  content: '\\f0de';\n  font-family: FontAwesome;\n  color: #000; }\n\nth.desc:after {\n  content: '\\f0dd';\n  font-family: FontAwesome;\n  color: #000; }\n\n.toggle {\n  margin-bottom: 20px;\n  border: 1px solid #ddd; }\n  .toggle__hook {\n    display: block;\n    width: 100%;\n    padding: 10px;\n    border: none;\n    background: none;\n    cursor: pointer; }\n    .toggle__hook[aria-expanded] {\n      position: relative; }\n      .toggle__hook[aria-expanded]::before, .toggle__hook[aria-expanded]::after {\n        position: absolute;\n        top: 50%;\n        right: 15px;\n        width: 20px;\n        height: 2px;\n        content: '';\n        background: #090909;\n        transition: .3s;\n        transform-origin: center; }\n      .toggle__hook[aria-expanded] > span {\n        position: absolute;\n        top: -3000px;\n        left: -3000px; }\n    .toggle__hook[aria-expanded=\"false\"]::before {\n      transform: rotate(90deg); }\n    .toggle__hook[aria-expanded=\"true\"]::before {\n      transform: rotate(0deg); }\n  .toggle__content {\n    overflow: hidden; }\n  .toggle__content[aria-hidden=\"true\"] {\n    display: none; }\n  .toggle__content[aria-hidden=\"false\"] {\n    display: block; }\n  .toggle .content__inner {\n    padding: 10px; }\n","/*!\n * ress.css • v1.2.2\n * MIT License\n * github.com/filipelinhares/ress\n */\n\nhtml {\n  box-sizing: border-box;\n  overflow-y: scroll;\n  /* All browsers without overlaying scrollbars */\n  -webkit-text-size-adjust: 100%;\n  /* iOS 8+ */\n}\n\n*,\n::before,\n::after {\n  background-repeat: no-repeat;\n  box-sizing: inherit;\n}\n\n::before,\n::after {\n  text-decoration: inherit;\n  vertical-align: inherit;\n}\n\n* {\n  padding: 0;\n  margin: 0;\n}\n\naudio:not([controls]) {\n  display: none;\n  height: 0;\n}\n\nhr {\n  overflow: visible;\n}\n\narticle,\naside,\ndetails,\nfigcaption,\nfigure,\nfooter,\nheader,\nmain,\nmenu,\nnav,\nsection,\nsummary {\n  display: block;\n}\n\nsummary {\n  display: list-item;\n}\n\nsmall {\n  font-size: 80%;\n}\n\n[hidden],\ntemplate {\n  display: none;\n}\n\nabbr[title] {\n  border-bottom: 1px dotted;\n  text-decoration: none;\n}\n\na {\n  background-color: transparent;\n  -webkit-text-decoration-skip: objects;\n}\n\na:active,\na:hover {\n  outline-width: 0;\n}\n\ncode,\nkbd,\npre,\nsamp {\n  font-family: monospace, monospace;\n}\n\nb,\nstrong {\n  font-weight: bolder;\n}\n\ndfn {\n  font-style: italic;\n}\n\nmark {\n  background-color: #ff0;\n  color: #000;\n}\n\nsub,\nsup {\n  font-size: 75%;\n  line-height: 0;\n  position: relative;\n  vertical-align: baseline;\n}\n\nsub {\n  bottom: -0.25em;\n}\n\nsup {\n  top: -0.5em;\n}\n\n\ninput {\n  border-radius: 0;\n}\n\nbutton,\n[type=\"button\"],\n[type=\"reset\"],\n[type=\"submit\"],\n[role=\"button\"] {\n  cursor: pointer;\n}\n\n[disabled] {\n  cursor: default;\n}\n\n[type=\"number\"] {\n  width: auto;\n}\n\n[type=\"search\"] {\n  -webkit-appearance: textfield;\n}\n\n[type=\"search\"]::-webkit-search-cancel-button,\n[type=\"search\"]::-webkit-search-decoration {\n  -webkit-appearance: none;\n}\n\ntextarea {\n  overflow: auto;\n  resize: vertical;\n}\n\nbutton,\ninput,\noptgroup,\nselect,\ntextarea {\n  font: inherit;\n}\n\noptgroup {\n  font-weight: bold;\n}\n\nbutton {\n  overflow: visible;\n}\n\nbutton::-moz-focus-inner,\n[type=\"button\"]::-moz-focus-inner,\n[type=\"reset\"]::-moz-focus-inner,\n[type=\"submit\"]::-moz-focus-inner {\n  border-style: 0;\n  padding: 0;\n}\n\nbutton:-moz-focusring,\n[type=\"button\"]::-moz-focus-inner,\n[type=\"reset\"]::-moz-focus-inner,\n[type=\"submit\"]::-moz-focus-inner {\n  outline: 1px dotted ButtonText;\n}\n\nbutton,\nhtml [type=\"button\"],\n[type=\"reset\"],\n[type=\"submit\"] {\n  -webkit-appearance: button;\n}\n\nbutton,\nselect {\n  text-transform: none;\n}\n\nbutton,\ninput,\nselect,\ntextarea {\n  background-color: transparent;\n  border-style: none;\n  color: inherit;\n}\n\nselect {\n  -moz-appearance: none;\n  -webkit-appearance: none;\n}\n\nselect::-ms-expand {\n  display: none;\n}\n\nselect::-ms-value {\n  color: currentColor;\n}\n\nlegend {\n  border: 0;\n  color: inherit;\n  display: table;\n  max-width: 100%;\n  white-space: normal;\n}\n\n::-webkit-file-upload-button {\n  -webkit-appearance: button;\n  font: inherit;\n}\n\n[type=\"search\"] {\n  -webkit-appearance: textfield;\n  outline-offset: -2px;\n}\n\n\nimg {\n  border-style: none;\n}\n\nprogress {\n  vertical-align: baseline;\n}\n\nsvg:not(:root) {\n  overflow: hidden;\n}\n\naudio,\ncanvas,\nprogress,\nvideo {\n  display: inline-block;\n}\n\n\n@media screen {\n  [hidden~=\"screen\"] {\n    display: inherit;\n  }\n\n  [hidden~=\"screen\"]:not(:active):not(:focus):not(:target) {\n    position: absolute !important;\n    clip: rect(0 0 0 0) !important;\n  }\n}\n\n[aria-busy=\"true\"] {\n  cursor: progress;\n}\n\n[aria-controls] {\n  cursor: pointer;\n}\n\n[aria-disabled] {\n  cursor: default;\n}\n\n\n\n::-moz-selection {\n  background-color: #b3d4fc;\n  color: #000;\n  text-shadow: none;\n}\n\n::selection {\n  background-color: #b3d4fc;\n  color: #000;\n  text-shadow: none;\n}","@charset \"UTF-8\";\nbody {\n    font-size: 16px;\n    font-family: Verdana;\n}\n\ntable {\n    width: 540px;\n    margin: 20px auto;\n    border-collapse: collapse;\n\n    th, td {\n        width: 180px;\n        box-sizing: border-box;\n        border: 1px solid #555;\n        padding: 20px;\n    }\n\n    th {\n        cursor: pointer;\n    }\n\n    tbody tr:nth-child(odd) {\n        background: #f8f8f8;\n    }\n}\n\n.score {\n    text-align: right;\n}\n\nth:after {\n    content: '\\f0dc';\n    font-family: FontAwesome;\n    font-size: 12px;\n    color: #ccc;\n    float: right;\n    padding-top: 4px;\n    font-weight: nomal;\n}\nth.asc:after {\n    content: '\\f0de';\n    font-family: FontAwesome;\n    color: #000;\n}\nth.desc:after {\n    content: '\\f0dd';\n    font-family: FontAwesome;\n    color: #000;\n}\n","@charset \"UTF-8\";\n\n.toggle {\n  margin-bottom: 20px;\n  border: 1px solid #ddd;\n  \n  &__hook {\n    display: block;\n    width: 100%;\n    padding: 10px;\n    border: none;\n    background: none;\n    cursor: pointer;\n    \n    &[aria-expanded] {\n      position: relative;\n      \n      &::before,\n      &::after {\n        position: absolute;\n        top: 50%;\n        right: 15px;\n        width: 20px;\n        height: 2px;\n        content: '';\n        background: #090909;\n        transition: .3s;\n        transform-origin: center;\n      }\n\n      > span {\n        position: absolute;\n        top: -3000px;\n        left: -3000px;\n      }\n    }\n    \n    &[aria-expanded=\"false\"] {\n      &::before {\n        transform: rotate(90deg);\n      }\n    }\n    \n    &[aria-expanded=\"true\"] {\n      &::before {\n        transform: rotate(0deg);\n      }\n    }\n  }\n    \n  &__content {\n    overflow: hidden;\n  }\n  \n  &__content[aria-hidden=\"true\"] {\n    display: none;  \n  }\n    \n  &__content[aria-hidden=\"false\"] {\n    display: block;\n  }\n    \n    .content__inner {\n      padding: 10px;\n    }\n}\n"],"sourceRoot":""}]);
 
 
 
@@ -11601,7 +11601,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-Object(_sub__WEBPACK_IMPORTED_MODULE_2__["hello"])();
+Object(_sub__WEBPACK_IMPORTED_MODULE_2__["toggle"])();
 
 /***/ }),
 
@@ -11609,14 +11609,187 @@ Object(_sub__WEBPACK_IMPORTED_MODULE_2__["hello"])();
 /*!***********************!*\
   !*** ./src/js/sub.js ***!
   \***********************/
-/*! exports provided: hello */
+/*! exports provided: toggle */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "hello", function() { return hello; });
-function hello() {
-  console.log('hello world');
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "toggle", function() { return toggle; });
+function toggle() {
+  'use strict';
+
+  var FOCUSABLE = 'a, area, input, button, select, option, textarea, output, summary, video, audio, object, embed, iframe';
+  var TRANSITIONEND = 'transitionend';
+  setToggle('.toggle');
+
+  function setToggle(rootEl, options) {
+    var rootElement = document.querySelectorAll(rootEl);
+    var o = {
+      hook: '.toggle__hook',
+      content: '.toggle__content',
+      openTxt: 'トグルを開く',
+      closeTxt: 'トグルを閉じる',
+      duration: 300,
+      easing: 'ease'
+    };
+
+    if (options) {
+      for (var key in options) {
+        o[key] = options[key];
+      }
+    }
+
+    return rootElement.forEach(function (i) {
+      var root = i;
+      var hook = o.hook;
+      var content = o.content;
+      /**
+       * トグル機能
+       * @constructor
+       */
+
+      var Toggle = function Toggle() {
+        this.root = root;
+        this.hook = root.querySelector(hook);
+        this.content = root.querySelector(content);
+        this.focusEl = this.content.querySelectorAll(FOCUSABLE);
+        this.openTxt = o.openTxt;
+        this.closeTxt = o.closeTxt;
+        this.duration = o.duration;
+        this.easing = o.easing;
+        this.isSliding = false;
+        this.height = 0;
+      };
+
+      Toggle.prototype = {
+        init: function init() {
+          this.setStyle();
+          this.setAccessibility();
+          this.clickHandler();
+        },
+
+        /**
+         * トグルのスタイルを追加
+         * @returns {void}
+         */
+        setStyle: function setStyle() {
+          var triggerIcon = document.createElement('span');
+          var triggerInitTxt = document.createTextNode(this.openTxt);
+          this.content.style.transitionDuration = this.duration / 1000 + 's';
+          this.content.style.transitionTimingFunction = this.easing;
+          triggerIcon.appendChild(triggerInitTxt);
+          this.hook.appendChild(triggerIcon);
+        },
+
+        /**
+         * アクセシビリティ要項追加
+         * @returns {void}
+         */
+        setAccessibility: function setAccessibility() {
+          this.hook.setAttribute('aria-expanded', false);
+          this.content.setAttribute('aria-hidden', true);
+        },
+
+        /**
+         * クリック時の処理
+         * @returns {void}
+         */
+        clickHandler: function clickHandler() {
+          var self = this;
+          this.hook.addEventListener('click', function (e) {
+            var hookState = e.target.getAttribute('aria-expanded');
+
+            if (self.isSliding) {
+              return;
+            }
+
+            self.isSliding = true;
+
+            if (hookState === 'false') {
+              self.openToggle();
+              self.changeTabIndex();
+            } else {
+              self.closeToggle();
+              self.changeTabIndex();
+            }
+
+            self.content.addEventListener(TRANSITIONEND, function () {
+              self.transitionHandler(self);
+            });
+          });
+        },
+
+        /**
+         * 開閉アニメーション終了後の処理
+         * @returns {void}
+         */
+        transitionHandler: function transitionHandler(self) {
+          if (self.content.offsetHeight === 0) {
+            self.content.setAttribute('aria-hidden', true);
+          }
+
+          self.content.style.height = '';
+          self.isSliding = false;
+        },
+
+        /**
+         * トグルを開く機能
+         * @returns {void}
+         */
+        openToggle: function openToggle() {
+          this.hook.setAttribute('aria-expanded', true);
+          this.content.setAttribute('aria-hidden', false);
+          this.height = this.content.offsetHeight;
+          this.content.style.height = 0;
+
+          if (this.content.offsetHeight !== 0) {
+            requestAnimationFrame(this.openToggle);
+            return;
+          }
+
+          this.content.style.height = this.height + 'px';
+        },
+
+        /**
+         * トグルを閉じる機能
+         * @returns {void}
+         */
+        closeToggle: function closeToggle() {
+          this.height = this.content.offsetHeight;
+          this.content.style.height = this.height + 'px';
+          this.hook.setAttribute('aria-expanded', false);
+
+          if (this.content.offsetHeight !== this.height) {
+            return;
+          }
+
+          this.content.style.height = 0;
+        },
+
+        /**
+         * タブインデックスの操作
+         * @returns {void}
+         */
+        changeTabIndex: function changeTabIndex() {
+          var hookState = this.hook.getAttribute('aria-expanded');
+
+          if (!this.focusEl.length) {
+            return;
+          }
+
+          this.focusEl.forEach(function (i) {
+            if (hookState === 'true') {
+              i.setAttribute('tabindex', 0);
+            } else {
+              i.setAttribute('tabindex', -1);
+            }
+          });
+        }
+      };
+      var toggle = new Toggle();
+      toggle.init();
+    });
+  }
 }
 
 /***/ }),
