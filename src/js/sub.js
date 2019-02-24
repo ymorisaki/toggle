@@ -12,7 +12,9 @@ export function toggle() {
       hook: '.toggle__hook',
       content: '.toggle__content',
       openTxt: 'トグルを開く',
-      closeTxt: 'トグルを閉じる'
+      closeTxt: 'トグルを閉じる',
+      duration: 300,
+      easing: 'ease'
     };
 
     if (options) {
@@ -37,14 +39,40 @@ export function toggle() {
         this.focusEl = this.content.querySelectorAll(FOCUSABLE);
         this.openTxt = o.openTxt;
         this.closeTxt = o.closeTxt;
+        this.duration = o.duration;
+        this.easing = o.easing;
         this.isSliding = false;
         this.height = 0;
       };
 
       Toggle.prototype = {
         init: function () {
+          this.setStyle();
           this.setAccessibility();
           this.clickHandler();
+        },
+
+        /**
+         * トグルのスタイルを追加
+         * @returns {void}
+         */
+        setStyle: function () {
+          let triggerIcon = document.createElement('span');
+          let triggerInitTxt = document.createTextNode(this.openTxt);
+
+          this.content.style.transitionDuration = this.duration / 1000 + 's'
+          this.content.style.transitionTimingFunction = this.easing;
+          triggerIcon.appendChild(triggerInitTxt);
+          this.hook.appendChild(triggerIcon);
+        },
+
+        /**
+         * アクセシビリティ要項追加
+         * @returns {void}
+         */
+        setAccessibility: function () {
+          this.hook.setAttribute('aria-expanded', false);
+          this.content.setAttribute('aria-hidden', true);
         },
 
         /**
@@ -99,10 +127,12 @@ export function toggle() {
           this.content.setAttribute('aria-hidden', false);
           this.height = this.content.offsetHeight; 
           this.content.style.height = 0;
+
           if (this.content.offsetHeight !== 0) {
             requestAnimationFrame(this.openToggle);
             return;
           }
+
           this.content.style.height = this.height + 'px';
         },
 
@@ -111,11 +141,14 @@ export function toggle() {
          * @returns {void}
          */
         closeToggle: function () {
+          this.height = this.content.offsetHeight;
           this.content.style.height = this.height + 'px';
           this.hook.setAttribute('aria-expanded', false);
+
           if (this.content.offsetHeight !== this.height) {
             return;
           }
+
           this.content.style.height = 0;
         },
 
@@ -125,6 +158,7 @@ export function toggle() {
          */
         changeTabIndex: function () {
           let hookState = this.hook.getAttribute('aria-expanded');
+
           if (!this.focusEl.length) {
             return;
           }
@@ -136,19 +170,6 @@ export function toggle() {
               i.setAttribute('tabindex', -1);
             }
           });
-        },
-
-        /**
-         * アクセシビリティ要項追加
-         * @returns {void}
-         */
-        setAccessibility: function () {
-          let triggerIcon = document.createElement('span');
-          let triggerInitTxt = document.createTextNode(this.openTxt);
-          triggerIcon.appendChild(triggerInitTxt);
-          this.hook.appendChild(triggerIcon);
-          this.hook.setAttribute('aria-expanded', false);
-          this.content.setAttribute('aria-hidden', true);
         }
       };
 
@@ -156,5 +177,4 @@ export function toggle() {
       toggle.init();
     });
   }
-
 }
