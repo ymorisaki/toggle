@@ -37,7 +37,7 @@ export function toggle() {
         this.focusEl = this.content.querySelectorAll(FOCUSABLE);
         this.openTxt = o.openTxt;
         this.closeTxt = o.closeTxt;
-        this.button = null;
+        this.buttonTxt = null;
         this.duration = o.duration;
         this.easing = o.easing;
         this.isSliding = false;
@@ -63,7 +63,7 @@ export function toggle() {
           this.content.style.transitionTimingFunction = this.easing;
           triggerIcon.appendChild(triggerInitTxt);
           this.hook.appendChild(triggerIcon);
-          this.button = this.hook.querySelector('span');
+          this.buttonTxt = this.hook.querySelector('span');
         },
 
         /**
@@ -93,12 +93,11 @@ export function toggle() {
 
             if (hookState === 'false') {
               self.openToggle();
-              self.changeTabIndex();
             } else {
               self.closeToggle();
-              self.changeTabIndex();
             }
 
+            self.changeTabIndex();
             self.content.addEventListener(TRANSITIONEND, function () {
               self.transitionHandler(self);
             });
@@ -125,7 +124,7 @@ export function toggle() {
         openToggle: function () {
           this.hook.setAttribute('aria-expanded', true);
           this.content.setAttribute('aria-hidden', false);
-          this.button.textContent = this.closeTxt;
+          this.buttonTxt.textContent = this.closeTxt;
           this.height = this.content.offsetHeight; 
           this.content.style.height = 0;
 
@@ -145,7 +144,7 @@ export function toggle() {
           this.height = this.content.offsetHeight;
           this.content.style.height = this.height + 'px';
           this.hook.setAttribute('aria-expanded', false);
-          this.button.textContent = this.openTxt;
+          this.buttonTxt.textContent = this.openTxt;
 
           if (this.content.offsetHeight !== this.height) {
             return;
