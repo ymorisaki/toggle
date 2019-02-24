@@ -1,1 +1,67 @@
 @charset "UTF-8";
+
+.toggle {
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  
+  &__hook {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    
+    &[aria-expanded] {
+      position: relative;
+      
+      &::before,
+      &::after {
+        position: absolute;
+        top: 50%;
+        right: 15px;
+        width: 20px;
+        height: 2px;
+        content: '';
+        background: #090909;
+        transition: .3s;
+        transform-origin: center;
+      }
+
+      > span {
+        position: absolute;
+        top: -3000px;
+        left: -3000px;
+      }
+    }
+    
+    &[aria-expanded="false"] {
+      &::before {
+        transform: rotate(90deg);
+      }
+    }
+    
+    &[aria-expanded="true"] {
+      &::before {
+        transform: rotate(0deg);
+      }
+    }
+  }
+    
+  &__content {
+    overflow: hidden;
+    transition: .3s;
+  }
+  
+  &__content[aria-hidden="true"] {
+    display: none;  
+  }
+    
+  &__content[aria-hidden="false"] {
+    display: block;
+  }
+    
+    .content__inner {
+      padding: 10px;
+    }
+}

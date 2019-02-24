@@ -1,7 +1,7 @@
 import '@babel/polyfill';
 import '../scss/main.scss';
 import {
-  hello
+  toggle
 } from './sub';
 
-hello();
+toggle();
