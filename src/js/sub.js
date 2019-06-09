@@ -8,45 +8,41 @@ export function toggle() {
    * トグル機能
    * @constructor
    */
-  const Toggle = function (root, options) {
-    if (this === undefined) {
-      return new Toggle(root, options);
-    }
+  class Toggle {
+    constructor (root, options) {
+      const o = {
+        hook: '.toggle__hook',
+        content: '.toggle__content',
+        openTxt: 'トグルを開く',
+        closeTxt: 'トグルを閉じる',
+        duration: 300,
+        easing: 'ease'
+      };
 
-    const o = {
-      hook: '.toggle__hook',
-      content: '.toggle__content',
-      openTxt: 'トグルを開く',
-      closeTxt: 'トグルを閉じる',
-      duration: 300,
-      easing: 'ease'
+      Object.assign(o, options);
+
+      this.root = root;
+      this.hook = root.querySelector(o.hook);
+      this.content = root.querySelector(o.content);
+      this.focusEl = this.content.querySelectorAll(FOCUSABLE);
+      this.openTxt = o.openTxt;
+      this.closeTxt = o.closeTxt;
+      this.buttonTxt = null;
+      this.duration = o.duration;
+      this.easing = o.easing;
+      this.isSliding = false;
+      this.height = 0;
+
+      this.setStyle();
+      this.setAccessibility();
+      this.clickEvent();
     };
 
-    Object.assign(o, options);
-
-    this.root = root;
-    this.hook = root.querySelector(o.hook);
-    this.content = root.querySelector(o.content);
-    this.focusEl = this.content.querySelectorAll(FOCUSABLE);
-    this.openTxt = o.openTxt;
-    this.closeTxt = o.closeTxt;
-    this.buttonTxt = null;
-    this.duration = o.duration;
-    this.easing = o.easing;
-    this.isSliding = false;
-    this.height = 0;
-
-    this.setStyle();
-    this.setAccessibility();
-    this.clickEvent();
-  };
-
-  Toggle.prototype = {
     /**
      * トグルのスタイルを追加
      * @returns {void}
      */
-    setStyle: function () {
+    setStyle () {
       const triggerIcon = document.createElement('span');
       const triggerInitTxt = document.createTextNode(this.openTxt);
 
@@ -55,26 +51,26 @@ export function toggle() {
       triggerIcon.appendChild(triggerInitTxt);
       this.hook.appendChild(triggerIcon);
       this.buttonTxt = this.hook.querySelector('span');
-    },
+    }
 
     /**
      * アクセシビリティ要項追加
      * @returns {void}
      */
-    setAccessibility: function () {
+    setAccessibility () {
       this.hook.setAttribute('aria-expanded', false);
       this.content.setAttribute('aria-hidden', true);
-    },
+    }
 
     /**
      * クリック時の処理
      * @returns {void}
      */
-    clickEvent: function () {
+    clickEvent () {
       const self = this;
 
       self.hook.addEventListener('click', function (e) {
-        const hookState = e.target.getAttribute('aria-expanded');
+        const ariaHookState = e.target.getAttribute('aria-expanded');
 
         if (self.isSliding) {
           return;
@@ -82,7 +78,7 @@ export function toggle() {
 
         self.isSliding = true;
 
-        if (hookState === 'false') {
+        if (ariaHookState === 'false') {
           self.openToggle();
         } else {
           self.closeToggle();
@@ -93,26 +89,26 @@ export function toggle() {
           self.transitionEvent(self);
         });
       });
-    },
+    }
 
     /**
      * 開閉アニメーション終了後の処理
      * @returns {void}
      */
-    transitionEvent: function (self) {
+    transitionEvent (self) {
       if (self.content.offsetHeight === 0) {
         self.content.setAttribute('aria-hidden', true);
       }
 
       self.content.style.height = '';
       self.isSliding = false;
-    },
+    }
 
     /**
      * トグルを開く機能
      * @returns {void}
      */
-    openToggle: function () {
+    openToggle () {
       this.hook.setAttribute('aria-expanded', true);
       this.content.setAttribute('aria-hidden', false);
       this.buttonTxt.textContent = this.closeTxt;
@@ -125,13 +121,13 @@ export function toggle() {
       }
 
       this.content.style.height = this.height + 'px';
-    },
+    }
 
     /**
      * トグルを閉じる機能
      * @returns {void}
      */
-    closeToggle: function () {
+    closeToggle () {
       this.height = this.content.offsetHeight;
       this.content.style.height = this.height + 'px';
       this.hook.setAttribute('aria-expanded', false);
@@ -142,30 +138,30 @@ export function toggle() {
       }
 
       this.content.style.height = 0;
-    },
+    }
 
     /**
      * タブインデックスの操作
      * @returns {void}
      */
-    changeTabIndex: function () {
-      const hookState = this.hook.getAttribute('aria-expanded');
+    changeTabIndex () {
+      const ariaHookState = this.hook.getAttribute('aria-expanded');
 
       if (!this.focusEl.length) {
         return;
       }
 
       this.focusEl.forEach(function (el) {
-        if (hookState === 'true') {
+        if (ariaHookState === 'true') {
           el.removeAttribute('tabindex');
         } else {
           el.tabIndex = -1;
         }
       });
     }
-  };
+  }
 
   document.querySelectorAll('.toggle').forEach((el) => {
-    Toggle(el);
+    new Toggle(el);
   });
 }
