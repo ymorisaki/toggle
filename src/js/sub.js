@@ -67,26 +67,24 @@ export function toggle() {
      * @returns {void}
      */
     clickEvent () {
-      const self = this;
-
-      self.hook.addEventListener('click', function (e) {
+      this.hook.addEventListener('click', (e) => {
         const ariaHookState = e.target.getAttribute('aria-expanded');
 
-        if (self.isSliding) {
+        if (this.isSliding) {
           return;
         }
 
-        self.isSliding = true;
+        this.isSliding = true;
 
         if (ariaHookState === 'false') {
-          self.openToggle();
+          this.openToggle();
         } else {
-          self.closeToggle();
+          this.closeToggle();
         }
 
-        self.changeTabIndex();
-        self.content.addEventListener(TRANSITIONEND, function () {
-          self.transitionEvent(self);
+        this.changeTabIndex();
+        this.content.addEventListener(TRANSITIONEND, () => {
+          this.transitionEvent(this);
         });
       });
     }
@@ -151,7 +149,7 @@ export function toggle() {
         return;
       }
 
-      this.focusEl.forEach(function (el) {
+      this.focusEl.forEach((el) => {
         if (ariaHookState === 'true') {
           el.removeAttribute('tabindex');
         } else {
